@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>İletişim</title>
+    <link rel="stylesheet" href="/İletişim/iletişim.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap"
+      async
+      defer
+    ></script>
+  </head>
+  <body>
+    <!-- Yıldızlı Arka Plan -->
+    <div id="bg"></div>
+
+    <header>
+      <div class="logo"><a href="/Anasayfa/main.html"> Sistem Araştırma</a></div>
+      <nav>
+
+        <!-- Mobil menü butonu -->
+        <div class="menu-toggle" id="menu-toggle">
+          <span class="bar">☰</span>
+      </div>
+        <ul>
+          <li><a href="/Anasayfa/main.html">Anasayfa</a></li>
+
+          <li><a href="/Hakkımızda/hakkımızda.html">Hakkımızda</a></li>
+          <li><a href="/Hizmetlerimiz/hizmetlerimiz.html">Hizmetlerimiz</a></li>
+          <li><a href="/İletişim/İletişim.html">İletişim</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Google Maps Bölümü -->
+    <section id="google-maps">
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d376.34908227581946!2d28.89341404780428!3d41.00793297478682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cabb17485349c1%3A0x4f10140746f14452!2zU2lzdGVtIFZlcmkgQXJhxZ90xLFybWEgdmUgRGFuxLHFn21hbmzEsWs!5e0!3m2!1str!2str!4v1738740691431!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </section>
+      
+
+    <!-- İletişim Bilgileri Bölümü -->
+    <section id="contact-info">
+        <div class="info-container">
+            <div class="info-box phone">
+                <h2>Telefon</h2>
+                <p>+90 123 456 7890</p>
+            </div>
+            <div class="info-box email">
+                <h2>Email</h2>
+                <p>example@email.com</p>
+            </div>
+        </div>
+    </section>
+    
+
+    <footer>
+      <p>© 2025 Sistem Araştırma | Tüm Hakları Saklıdır.</p>
+    </footer>
+
+
+    <script src="/script.js"></script>
+  </body>
+</html>

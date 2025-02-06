@@ -1,0 +1,458 @@
+/* 🌌 Genel Stil */
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #000;
+  color: white;
+  overflow-x: hidden;
+  height: 100%;
+  position: relative;
+}
+
+/* 🌌 Uzay Arka Planı */
+body::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: url("https://source.unsplash.com/1600x900/?galaxy,space")
+    no-repeat center center fixed;
+  background-size: cover;
+  z-index: -2;
+  opacity: 0.2;
+}
+
+/* ⭐ Yıldızlar Animasyonu (Canvas) */
+#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* ⭐ Navbar */
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  z-index: 100;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+  border-radius: 0 0 10px 10px;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Navbar hover efekti */
+header:hover {
+  background: rgba(0, 0, 0, 0.9); /* Daha koyu renk */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8);
+}
+
+/* Logo */
+.logo {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #ff7f50;
+  transition: color 0.3s ease;
+}
+
+.logo:hover {
+  color: #ff4500;
+}
+
+.logo a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+  padding: 10px 0;
+  display: block;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+/* Navbar menüsü */
+nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  margin: 0 30px;
+  position: relative;
+}
+
+/* Navbar menü bağlantıları */
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+  padding: 10px 0;
+  display: block;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Navbar bağlantıları hover durumunda */
+nav ul li a:hover {
+  color: #ff7f50;
+  transform: translateY(-5px);
+}
+
+/* Navbar bağlantıları altına animasyonlu çizgi */
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background: #ff7f50;
+  bottom: -5px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+/* Bağlantı üzerine gelindiğinde alt çizgi animasyonu */
+nav ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 2em;
+  color: white;
+  background: none;
+  border: none;
+}
+/* 📌 Anasayfa */
+#anasayfa {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+.content h1 {
+  font-size: 4em;
+  text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.8);
+}
+
+.content p {
+  font-size: 1.5em;
+  opacity: 0.9;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 15px 30px;
+  margin-top: 20px;
+  background: #ff7f50;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1.2em;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(255, 127, 80, 0.6);
+}
+
+.cta-button:hover {
+  background: #ff4500;
+  transform: scale(1.1);
+}
+
+/* 🌟 Bölümler */
+.sections {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 80px 20px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 10;
+}
+section #hakkimizda a {
+  cursor: pointer;
+  text-decoration: none;
+  color: aliceblue;
+}
+section #hakkimizda{
+  cursor: pointer;
+
+}
+section #iletisim {
+  cursor: pointer;
+}
+section #hizmetler {
+  cursor: pointer;
+}
+section #iletisim a{
+  cursor: pointer;
+  text-decoration: none;
+  color: aliceblue;
+}
+section #hizmetler a{
+  cursor: pointer;
+
+  text-decoration: none;
+  color: aliceblue;
+}
+.section-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  width: 30%;
+  text-align: center;
+  border-radius: 15px;
+  backdrop-filter: none;
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.section-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+}
+
+/* 💡 Işık Efekti */
+.section-card:hover::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 127, 80, 0.2) 10%,
+    transparent 80%
+  );
+  z-index: -1;
+}
+
+/* 🎨 Neon Kenarlık Efekti */
+.section-card:hover {
+  border: 2px solid rgba(255, 127, 80, 0.5);
+}
+
+/* 🌍 Gezegen Animasyonu */
+.planet {
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, #113355 10%, #001133 90%);
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(0, 170, 255, 0.8);
+  animation: orbit 15s linear infinite;
+}
+
+/* 🌟 Düşünürler Bölümü */
+.thinkers-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 60px 20px;
+  text-align: center;
+  align-items: center;
+}
+
+.thinker-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  width: 80%;
+  max-width: 1200px;
+  backdrop-filter: blur(8px);
+  position: relative;
+}
+
+.thinker-box:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(255, 255, 255, 0.3);
+}
+
+/* 📸 Resimler */
+.thinker-left {
+  flex: 1;
+  max-width: 300px;
+  height: 300px;
+  margin-right: 30px;
+  position: relative;
+}
+
+.thinker-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 170, 255, 0.8);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.thinker-left img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 30px rgba(0, 170, 255, 1);
+}
+/* 📝 Metin */
+.thinker-right {
+  flex: 2;
+  padding-left: 30px;
+  text-align: left;
+  max-width: 600px;
+}
+
+.thinker-right p {
+  font-size: 2em;
+  color: white;
+  font-style: italic;
+  line-height: 1.5;
+  position: relative;
+}
+
+.thinker-right strong {
+  font-size: 1.4em;
+  display: block;
+  margin-top: 15px;
+  text-align: right;
+  color: #ff7f50;
+}
+
+/* ⚡ Gezegen Döndürme */
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(50px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(50px) rotate(-360deg);
+  }
+}
+@media (max-width: 768px) {
+  .thinker-box {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    width: 90%;
+  }
+
+  .thinker-left {
+    margin-bottom: 20px;
+  }
+
+  .thinker-right {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .thinker-right p {
+    font-size: 1.4em;
+  }
+}
+
+/* 📏 Responsive Tasarım */
+@media (max-width: 1200px) {
+  .sections {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section-card {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    margin-right: 40px;
+    display: block;
+  }
+
+  .menu {
+    display: none;
+    width: 100%;
+    text-align: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 20px 0;
+  }
+
+  /* Menüye tıklandığında görünmesini sağlayacak stil */
+  .menu.show {
+    display: flex;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    text-align: center;
+    padding: 20px 0;
+    transition: all 0.5s ease-in-out;
+  }
+  nav ul.show {
+    display: flex;
+  }
+  nav ul li {
+    margin: 15px 0;
+    display: block;
+  }
+
+  nav ul li a {
+    font-size: 1.5em;
+  }
+
+  .content h1 {
+    font-size: 2.5em;
+  }
+
+  .content p {
+    font-size: 1.2em;
+  }
+
+  .cta-button {
+    font-size: 1em;
+  }
+
+  .planet {
+    display: none;
+  }
+
+  .thinker-box {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .thinker-left {
+    margin-bottom: 20px;
+  }
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  font-size: 1em;
+  margin-top: 50px;
+}

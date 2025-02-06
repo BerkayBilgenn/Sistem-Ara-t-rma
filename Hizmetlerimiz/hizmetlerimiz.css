@@ -1,0 +1,275 @@
+/* Genel Stil */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: black;
+  color: white;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Yıldızlı Arka Plan */
+#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* ⭐ Navbar */
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  z-index: 100;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+  border-radius: 0 0 10px 10px;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Navbar hover efekti */
+header:hover {
+  background: rgba(0, 0, 0, 0.9); /* Daha koyu renk */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8);
+}
+
+/* Logo */
+.logo {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #ff7f50;
+  transition: color 0.3s ease;
+}
+.logo a{
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+  padding: 10px 0;
+  display: block;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.logo:hover {
+  color: #ff4500;
+}
+
+/* Navbar menüsü */
+nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  margin: 0 30px;
+  position: relative;
+}
+
+/* Navbar menü bağlantıları */
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+  padding: 10px 0;
+  display: block;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Navbar bağlantıları hover durumunda */
+nav ul li a:hover {
+  color: #ff7f50;
+  transform: translateY(-5px);
+}
+
+/* Navbar bağlantıları altına animasyonlu çizgi */
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background: #ff7f50;
+  bottom: -5px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+/* Bağlantı üzerine gelindiğinde alt çizgi animasyonu */
+nav ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 2em;
+  color: white;
+  background: none;
+  border: none;
+}
+
+/* Hizmetlerimiz Bölümü */
+#hizmetlerimiz {
+  text-align: center;
+  padding: 150px 20px 50px;
+}
+
+.section-title {
+  font-size: 3em;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #ff7f50;
+  text-shadow: 0 0 20px rgba(255, 127, 80, 0.8);
+}
+
+.services-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Hizmet Kutusu Stilleri */
+.service-box {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  width: 25%;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(255, 127, 80, 0.5);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: fadeInUp 1.5s ease;
+}
+
+/* Hizmet kutusu üzerine gelindiğinde animasyon */
+.service-box:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(255, 127, 80, 0.7);
+}
+
+/* Hizmet kutusu başlık stili */
+.service-box h2 {
+  font-size: 2.2em;
+  color: #ff7f50;
+  margin-bottom: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Hizmet kutusundaki metin stili */
+.service-box p {
+  font-size: 1.4em;
+  line-height: 1.8;
+  color: #f5f5f5;
+}
+
+/* hr için stil - ayırıcı çizgiler */
+hr {
+  border: none;
+  border-top: 2px solid #ff7f50; /* Turuncu çizgi */
+  margin: 20px 0;
+  width: 80%;
+  align-self: center; /* Ortalamak için */
+  opacity: 0.5; /* Hafif şeffaflık */
+  transition: all 0.3s ease; /* Animasyonlu geçiş */
+}
+
+/* hr üzerine gelindiğinde renk değiştirme */
+hr:hover {
+  border-top: 2px solid #ff4500; /* Hoverda daha koyu turuncu */
+  opacity: 1; /* Opaklığı artırma */
+}
+
+/* kesik çizgi görünümü */
+.service-box hr {
+  border-top: 3px dashed #ff7f50; /* Kesik kesik çizgi */
+  width: 60%;
+  margin: 20px auto; /* Ortalamak için */
+  transition: border-top 0.3s ease; /* Geçiş ekleme */
+}
+
+/* kesik çizgi üzerine gelindiğinde renk değişimi */
+.service-box hr:hover {
+  border-top: 3px dashed #ff4500; /* Hover efekti ile daha dikkat çekici hale gelir */
+}
+
+/* Yuvarlak kenarlı çizgi */
+hr.rounded {
+  border-top: 4px solid #ff7f50;
+  border-radius: 10px;
+  margin: 20px 0;
+  width: 50%;
+  align-self: center;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  font-size: 0.7em;
+  margin-top: 50px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .services-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-box {
+    width: 80%;
+  }
+  .menu {
+    display: none;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 200px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+  }
+  .menu.show {
+    display: flex;
+  }
+  /* Menü toggle için responsive stil */
+  .menu-toggle {
+    margin-right: 40px;
+
+    display: block; /* Menü simgesini mobilde göster */
+   }
+
+  /* Navbar menüsü mobilde gizli olacak */
+  nav ul {
+    display: none;
+  }
+}
+
+/* Animasyonlar */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

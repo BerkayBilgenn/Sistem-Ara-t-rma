@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistem Araştırma</title>
+    <link rel="stylesheet" href="/Anasayfa/styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  </head>
+  <body>
+    <canvas id="bg"></canvas>
+    <!-- 🔹 Yıldız animasyonu tüm sayfayı kaplayacak -->
+
+    <!-- Navbar -->
+    <header>
+        <div class="logo"><a href="/Anasayfa/main.html"> Sistem Araştırma</a></div>
+      <nav>
+        <!-- Mobil menü butonu -->
+        <div class="menu-toggle" id="menu-toggle">
+          <span class="bar">☰</span>
+        </div>
+
+        <!-- Menü -->
+        <ul id="menu" class="menu">
+          <li><a href="/Anasayfa/main.html">Anasayfa</a></li>
+          <li><a href="/Hakkımızda/hakkımızda.html">Hakkımızda</a></li>
+          <li><a href="/Hizmetlerimiz/hizmetlerimiz.html">Hizmetlerimiz</a></li>
+          <li><a href="/İletişim/İletişim.html">İletişim</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- 🔹 Ana Sayfa - Veriye Dayalı Gelecek -->
+    <section id="anasayfa">
+      <div class="content">
+        <h1>🔍 Veriye Dayalı Gelecek</h1>
+        <p>
+          Uzay gibi sonsuz veri dünyasında,
+          <br />
+          çözümlerimizi keşfedin.
+        </p>
+        <a href="/İletişim/İletişim.html" class="cta-button">Bize Ulaşın</a>
+      </div>
+    </section>
+
+    <!-- 🔹 Ana Bölümler -->
+    <section class="sections">
+      <div id="hakkimizda" class="section-card">
+       <a href="/Hakkımızda/hakkımızda.html">
+        <h2>🛰️ Hakkımızda</h2>
+        <p>
+          Geleceğin verilerini analiz ederek, stratejik çözümler üretiyoruz.
+        </p>
+       </a>
+      </div>
+
+
+      <div id="hizmetler" class="section-card">
+        <a href="/Hizmetlerimiz/hizmetlerimiz.html">
+          <h2>🤖 Hizmetlerimiz</h2>
+        <p>Siyasal Araştırmalar, Pazar Araştırmaları ve daha fazlası...</p>
+        </a>
+      </div>
+
+      <div id="iletisim" class="section-card">
+          <a href="/İletişim/İletişim.html"><h2>📩 İletişim</h2>
+            <p>Bizimle iletişime geçerek çözümlerimizi keşfedin.</p></a>
+      </div>
+    </section>
+
+    <!-- Düşünürler Bölümü -->
+    <section class="thinkers-container">
+      <div class="thinker-box">
+        <div class="thinker-left">
+          <img
+            src="https://sistemarastirma.com/wp-content/uploads/2024/12/karl_pearson_1910_cropped.jpg"
+            alt="Düşünür Resmi"
+          />
+        </div>
+        <div class="thinker-right">
+          <p>
+            İstatistik, bilimin dil bilgisidir.<br /><strong
+              >- Karl Pearson</strong
+            >
+          </p>
+        </div>
+      </div>
+      <div class="thinker-box">
+        <div class="thinker-left">
+          <img
+            src="https://sistemarastirma.com/wp-content/uploads/2024/12/hilaire_belloc_side_view_1910.jpg"
+            alt="Düşünür Resmi"
+          />
+        </div>
+        <div class="thinker-right">
+          <p>
+            İstatistik, nicel yöntemin zaferidir; ve nicel yöntem, kısırlığın ve
+            ölümün zaferidir.<br /><strong>- Hilaire Belloc</strong>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🔹 Footer -->
+    <footer>
+      <p>© 2025 Sistem Araştırma | Tüm Hakları Saklıdır.</p>
+    </footer>
+
+    <script src="/script.js"></script>
+  </body>
+</html>

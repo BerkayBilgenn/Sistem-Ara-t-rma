@@ -1,0 +1,351 @@
+/* Genel Stil */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: black;
+    color: white;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* ⭐ Navbar */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 100;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+    border-radius: 0 0 10px 10px;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Navbar hover efekti */
+header:hover {
+    background: rgba(0, 0, 0, 0.9); /* Daha koyu renk */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8);
+}
+#bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('stars.jpg') no-repeat center center fixed;
+    background-size: cover;
+    z-index: -1; /* Arka plana yerleştirildi */
+}
+
+/* Logo */
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #ff7f50;
+    transition: color 0.3s ease;
+}
+.logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 10px 0;
+    display: block;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+.logo:hover {
+    color: #ff4500;
+}
+
+/* Navbar menüsü */
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 30px;
+    position: relative;
+}
+
+/* Navbar menü bağlantıları */
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 10px 0;
+    display: block;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Navbar bağlantıları hover durumunda */
+nav ul li a:hover {
+    color: #ff7f50;
+    transform: translateY(-5px);
+}
+
+/* Navbar bağlantıları altına animasyonlu çizgi */
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: #ff7f50;
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+/* Bağlantı üzerine gelindiğinde alt çizgi animasyonu */
+nav ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Google Maps Bölümü */
+#google-maps {
+    width: 100%;
+    height: 800px;
+    margin-top: 80px; /* Navbar'ın üzerine çıkmaması için */
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Harita konteyneri */
+.map-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* İletişim Bilgileri Bölümü */
+#contact-info {
+    padding: 50px 20px;
+    background-color: #000000;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Bilgiler için kapsayıcı */
+.info-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+/* İletişim kutusu */
+.info-box {
+    padding: 40px;
+    width: 300px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(255, 127, 80, 0.5);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Başlık */
+.info-box h2 {
+    font-size: 2.5em;
+    color: #ff7f50;
+    margin-bottom: 20px;
+}
+
+/* Metin düzeni */
+.info-box p {
+    font-size: 1.4em;
+    color: white;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 35px; /* Sol taraf için boşluk bırakıyoruz */
+}
+
+/* İkon eklemek için stil */
+.info-box p::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+}
+
+/* Telefon ikonu */
+.info-box .phone::before {
+    background-image: url('phone-icon.png'); /* Telefon simgesinin yolu */
+}
+
+/* E-posta ikonu */
+.info-box .email::before {
+    background-image: url('email-icon.png'); /* E-posta simgesinin yolu */
+}
+
+/* Hover efekti */
+.info-box:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(255, 127, 80, 0.7);
+}
+
+/* Menu Toggle (☰ simgesi) */
+.menu-toggle {
+    display: none; /* Varsayılan olarak gizli */
+    cursor: pointer;
+    font-size: 2em;
+    color: white;
+    background: none;
+    border: none;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    font-size: 0.7em;
+    margin-top: 50px;
+}
+
+/* ⚡ Gezegen Döndürme */
+@keyframes orbit {
+    0% {
+      transform: rotate(0deg) translateX(50px) rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg) translateX(50px) rotate(-360deg);
+    }
+  }
+  @media (max-width: 768px) {
+    .thinker-box {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+        width: 90%;
+    }
+  
+    .thinker-left {
+        margin-bottom: 20px;
+    }
+  
+    .thinker-right {
+        padding-left: 0;
+        text-align: center;
+    }
+  
+    .thinker-right p {
+        font-size: 1.4em;
+    }
+  }
+  
+  /* 📏 Responsive Tasarım */
+  @media (max-width: 1200px) {
+    .sections {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .section-card {
+      width: 90%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+      .menu-toggle {
+          margin-right: 40px;
+          display: block;
+      }
+  
+    .menu {
+      display: none;
+      width: 100%;
+      text-align: center;
+      flex-direction: column;
+      background-color: rgba(0, 0, 0, 0.9);
+      position: absolute;
+      top: 60px;
+      left: 0;
+      padding: 20px 0;
+   
+    }
+  
+    /* Menüye tıklandığında görünmesini sağlayacak stil */
+    .menu.show {
+      display: flex;
+    }
+  
+    nav ul {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      text-align: center;
+      padding: 20px 0;
+      transition: all 0.5s ease-in-out;
+  }
+  nav ul.show {
+      display: flex;
+  }
+    nav ul li {
+      margin: 15px 0;
+      display: block;
+  
+    }
+  
+    nav ul li a {
+      font-size: 1.5em;
+    }
+  
+    .content h1 {
+      font-size: 2.5em;
+    }
+  
+    .content p {
+      font-size: 1.2em;
+    }
+  
+    .cta-button {
+      font-size: 1em;
+    }
+  
+    .planet {
+      display: none;
+    }
+  
+    .thinker-box {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .thinker-left {
+      margin-bottom: 20px;
+    }
+  }
+
+/* Animasyonlar */
+@keyframes stars {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -10000px -10000px; /* Yıldızlar hareket eder */
+    }
+}
