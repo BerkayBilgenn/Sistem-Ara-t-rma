@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function () {
   // **Navbar Menü Açma / Kapama İşlevi**
   const menuToggle = document.getElementById("menu-toggle");
@@ -107,4 +108,10 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   animate();
+});
+
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server running on port ${PORT}`);
 });
